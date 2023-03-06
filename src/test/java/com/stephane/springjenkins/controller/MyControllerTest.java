@@ -10,18 +10,26 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-@WebMvcTest(MyController.class)
+@WebMvcTest
 @AutoConfigureMockMvc
 public class MyControllerTest {
 
     @Autowired
-    MockMvc mockMvc;
+    private MockMvc mockMvc;
+
 
     @Test
     public void testHello() throws Exception {
         mockMvc.perform(MockMvcRequestBuilders.get("/hello"))
             .andExpect(status().isOk())
             .andExpect(content().string("Hello World"));
+    }
+
+    @Test
+    public void testGreet() throws Exception {
+        mockMvc.perform(MockMvcRequestBuilders.get("/greet/Hello"))
+                .andExpect(status().isOk())
+                .andExpect(content().string("Hello"));
     }
 
 }
