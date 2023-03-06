@@ -16,13 +16,13 @@ public class MyController {
 
     @GetMapping("/hello")
     public String hello() {
-        log.info("Executing hello api.");
+        log.info("Executing hello api!");
         return "Hello World";
     }
 
     @GetMapping ("/greet/{greeting}")
     public String greet(@PathVariable("greeting") String greeting) {
-        log.info("Executing greet api.");
+        log.info("Executing greet api!");
         return myService.greet(greeting);
     }
 }
