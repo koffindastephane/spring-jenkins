@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 public class MyService {
 
     public String greet(String greeting) {
-        log.info("Executing greet service";
+        log.info("Executing greet service");
         return greeting;
     }
 
