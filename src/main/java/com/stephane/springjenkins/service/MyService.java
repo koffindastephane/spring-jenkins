@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 public class MyService {
 
     public String greet(String greeting) {
-    //    return greeting;
+        return greeting;
     }
 
 }
